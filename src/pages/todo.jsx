@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {PageBackButton, PageNextButton} from './pagebutton';
+import PageButton from './pagebutton';
 
 function Todo(){
     //Stateの準備
@@ -164,11 +164,15 @@ function Todo(){
                     style={{marginTop: '20px'}}>
 
                         {/*前のページに遷移するボタン*/}
-                        <PageBackButton
+                        <PageButton
                             currentPage={currentPage}
                             totalPages={totalPages}
                             setCurrentPage={setCurrentPage}
-                        />
+                            disabled={currentPage === 1}
+                            onClick={()=>{(currentPage >1)&& setCurrentPage(currentPage -1)}}
+                        >
+                            前へ
+                        </PageButton>
 
                         {/*ページ分だけボタンを作成する*/}
                         {Array.from({length: totalPages }, (_, index)=>{
@@ -189,11 +193,15 @@ function Todo(){
                         })}
 
                         {/*次のページに遷移するボタン*/}
-                        <PageNextButton
+                        <PageButton
                             currentPage={currentPage}
                             totalPages={totalPages}
                             setCurrentPage={setCurrentPage}
-                        />
+                            disabled={currentPage === totalPages}
+                            onClick={ ()=>{(currentPage < totalPages) && setCurrentPage(currentPage + 1)}}
+                        >
+                            次へ
+                        </PageButton>
 
                 </div>
 
