@@ -6,6 +6,10 @@ a {
   text-decoration: none;
 }
 
+li{
+    list-style:none;
+}
+
 .header{
     background-color: lightslategray;
     height:50px;
@@ -29,4 +33,9 @@ a {
 
 .buttons{
     margin-left:20px;
+}
+
+.completed-text {
+    text-decoration: line-through;
+    color: #aaa; /* 文字をグレーにして目立たなくする */
 }
