@@ -3,6 +3,7 @@ import Header from './components/header';
 import Top from './pages/top';
 import Todo from './pages/todo';
 import Calculate from './pages/calculate';
+import '../stylesheet.css';
 
 function App() {
   return (
